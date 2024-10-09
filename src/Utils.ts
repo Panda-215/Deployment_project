@@ -1,24 +1,22 @@
 import axios from "axios";
 
-// function add(a: number, b: number) {
-//     return a + b;
-// }
-
-function calculateDiscountPrice(price: number, discount: number): number {
+// Function to calculate discount price
+export function calculateDiscountPrice(price: number, discount: number): number {
     if (price < 0 || discount < 0) {
-        throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
+        throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ"); // Price or discount cannot be negative
     }
     const discountAmount = (price * discount) / 100;
     return price - discountAmount;
 }
 
-export default calculateDiscountPrice;
-
-
-// async function addUser(data:any) {
-//     const response: any = await axios.post('https://jsonplaceholder.typicode.com/users', data);
-//    console.log (response);
-//    return response.data
-
-// }
-export const Utils = { calculateDiscountPrice}
+// Function to add user
+export async function addUser(data: any) {
+    try {
+        const response = await axios.post('https://jsonplaceholder.typicode.com/users', data);
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Error adding user:", error);
+        throw error; // Rethrow the error for further handling
+    }
+}
