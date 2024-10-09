@@ -11,7 +11,7 @@ const unit_test = async () => {
         if (result1 === 80) {
             console.log("Discount Test1 passed: calculateDiscountPrice(100, 30) === 80");
         } else {
-            // console.log("Discount Test1 failed: calculateDiscountPrice(100, 30) !== 80");
+            console.log("Discount Test1 failed: calculateDiscountPrice(100, 30) !== 80");
         }
 
         // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
@@ -33,33 +33,8 @@ const unit_test = async () => {
         console.error("Error in discount calculation tests:", error);
     }
 
-    // ทดสอบฟังก์ชัน addUser
-    try {
-        const data: any = {
-            "name": "panda",
-            "username": "pp"
-        };
-        const response: any = await Utils.addUser(data);
-        const correct_result: any = {
-            "name": "panda",
-            "username": "pp"
-        };
 
-        // ตรวจสอบว่าข้อมูลที่เพิ่มตรงกับข้อมูลที่คาดหวังหรือไม่
-        let testPassed = true;
-        const keys: string[] = Object.keys(correct_result);
-        for (const k of keys) {
-            if (correct_result[k] !== response[k]) {
-                console.log(`addUser test failed at key: ${k}`);
-                testPassed = false;
-            }
-        }
-        if (testPassed) {
-            console.log("addUser test passed");
-        }
-    } catch (error) {
-        console.error("Error in addUser test:", error);
-    }
+    
 };
 
 // เรียกใช้ฟังก์ชันทดสอบ

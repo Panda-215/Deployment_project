@@ -12,15 +12,15 @@ app.get('/', (req: Request, res: Response) => {
 
 });
 
-app.get('/addUser', async (req: Request, res: Response) => {
-    const data: any = {
-        "name": "panda",
-        "username": "pp"
-    }
-    const result = await Utils.addUser(data);
+// app.get('/addUser', async (req: Request, res: Response) => {
+//     const data: any = {
+//         "name": "panda",
+//         "username": "pp"
+//     }
+//     const result = await Utils.addUser(data);
 
-    res.send(result)
-})
+//     res.send(result)
+// })
 
 app.listen(port, () => {
 
