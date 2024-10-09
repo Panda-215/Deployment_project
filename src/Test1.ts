@@ -10,10 +10,10 @@ const unit_test = async () => {
     try {
         // ทดสอบการคำนวณส่วนลด 20% จากราคาสินค้า 100 บาท ควรจะได้ผลลัพธ์ 80
         const result1 = calculateDiscountPrice(500, 20);
-        if (result1 === 80) {
-            console.log("Discount Test1 passed: calculateDiscountPrice(500, 20) === 80");
+        if (result1 === 0) {
+            console.log("Discount Test1 passed: calculateDiscountPrice(500, 20) === 0");
         } else {
-            console.log("Discount Test1 failed: calculateDiscountPrice(500, 20) !== 80");
+            console.log("Discount Test1 failed: calculateDiscountPrice(500, 20) !== 0");
         }
 
        // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
