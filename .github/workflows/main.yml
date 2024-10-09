@@ -21,12 +21,16 @@ jobs:
 
       - name: Run Test1
         run: |
-          output=$(node dist/Test1.js)
-          exit_code=$?
+          output=$(node dist/Test1.js)  # Execute the Test1 script
+          exit_code=$?  # Capture the exit code
           
           echo "Output: $output"  # Display output for debugging
 
-          if [ $exit_code -ne 0 ]; then
+          # Check if the output matches the expected value
+          if [[ "$output" == *"Assertion failed"* ]]; then
+            echo "Test failed: Assertion error detected"
+            exit 1  # Exit with a failure code if the assertion fails
+          elif [ $exit_code -ne 0 ]; then
             echo "Error $exit_code"
-            exit 1
+            exit 1  # Exit if there is another error
           fi
