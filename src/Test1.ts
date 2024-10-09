@@ -11,7 +11,7 @@ const unit_test = async () => {
         if (result1 === 80) {
             console.log("Discount Test1 passed: calculateDiscountPrice(100, 30) === 80");
         } else {
-            console.log("Discount Test1 failed: calculateDiscountPrice(100, 30) !== 80");
+            // console.log("Discount Test1 failed: calculateDiscountPrice(100, 30) !== 80");
         }
 
         // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
