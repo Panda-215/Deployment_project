@@ -10,19 +10,35 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const unit_test = () => __awaiter(void 0, void 0, void 0, function* () {
+<<<<<<< Updated upstream
     // ฟังก์ชันทดสอบโดยใช้ if-else
     function testCalculateDiscountedPriceWithExtra() {
         // ทดสอบกรณีปกติ
         let result = calculateDiscountedPriceWithExtra(100, 10);
         if (result === 90) {
             console.log('Test 1 passed');
+=======
+    //ทดสอบฟังก์ชัน calculateDiscountPrice
+    try {
+        // ทดสอบการคำนวณส่วนลด 20% จากราคาสินค้า 100 บาท ควรจะได้ผลลัพธ์ 80
+        const result1 = (0, Utils_1.default)(100, 30);
+        if (result1 === 20) {
+            console.log("Discount Test1 passed: calculateDiscountPrice(100, 30) === 80");
+>>>>>>> Stashed changes
         }
         else {
             console.log('Test 1 failed: Expected 90 but got ' + result);
         }
+<<<<<<< Updated upstream
         result = calculateDiscountedPriceWithExtra(600, 10);
         if (result === 510) {
             console.log('Test 2 passed');
+=======
+        // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
+        const result2 = (0, Utils_1.default)(100, 0);
+        if (result2 === 20) {
+            console.log("Discount Test2 passed: calculateDiscountPrice(100, 0) === 100");
+>>>>>>> Stashed changes
         }
         else {
             console.log('Test 2 failed: Expected 510 but got ' + result);
