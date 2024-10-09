@@ -17,12 +17,12 @@ const unit_test = () => __awaiter(void 0, void 0, void 0, function* () {
     //ทดสอบฟังก์ชัน calculateDiscountPrice
     try {
         // ทดสอบการคำนวณส่วนลด 20% จากราคาสินค้า 100 บาท ควรจะได้ผลลัพธ์ 80
-        const result1 = (0, Utils_1.default)(500, 20);
-        if (result1 === 0) {
-            console.log("Discount Test1 passed: calculateDiscountPrice(500, 20) === 0");
+        const result1 = (0, Utils_1.default)(100, 20);
+        if (result1 === 80) {
+            console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
         }
         else {
-            console.log("Discount Test1 failed: calculateDiscountPrice(500, 20) !== 0");
+            console.log("Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
         }
         // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
         const result2 = (0, Utils_1.default)(100, 0);
