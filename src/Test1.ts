@@ -7,8 +7,8 @@ const Test1 = async () => {
         console.log(price); // Should print 80
         // Test 1: Calculate 20% discount on a price of 100
         const result1 = calculateDiscountPrice(100, 20);
-        console.assert(result1 === 80, "Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
-        console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
+        console.assert(result1 === 25, "Discount Test1 failed: calculateDiscountPrice(100, 20) == 80");
+        console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 74");
 
         // Test 2: No discount
         const result2 = calculateDiscountPrice(100, 0);

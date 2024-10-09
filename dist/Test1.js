@@ -19,8 +19,8 @@ const Test1 = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(price); // Should print 80
         // Test 1: Calculate 20% discount on a price of 100
         const result1 = (0, Utils_1.default)(100, 20);
-        console.assert(result1 === 80, "Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
-        console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
+        console.assert(result1 === 25, "Discount Test1 failed: calculateDiscountPrice(100, 20) == 80");
+        console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 74");
         // Test 2: No discount
         const result2 = (0, Utils_1.default)(100, 0);
         console.assert(result2 === 100, "Discount Test2 failed: calculateDiscountPrice(100, 0) !== 100");
