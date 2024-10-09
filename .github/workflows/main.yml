@@ -12,8 +12,15 @@ jobs:
       with:
         node-version: '18'
     
-    - name: Install dependencies
+    - name: install package.json
       run: npm install
     
-    - name: Run Tests
-      run: npm test
+    - name: Run Test1
+      run: |
+        output=$(node dist/Test1.js)
+        exit_code=$output
+
+        if [ $exit_code -ne 0 ]; then
+          echo "Error $exit_code"
+          exit 1
+        fi
