@@ -1,7 +1,10 @@
-import { calculateDiscountPrice } from './Utils';
+import calculateDiscountPrice from './Utils';
 
 const Test1 = async () => {
     try {
+
+        const price = calculateDiscountPrice(100, 20);
+        console.log(price); // Should print 80
         // Test 1: Calculate 20% discount on a price of 100
         const result1 = calculateDiscountPrice(100, 20);
         console.assert(result1 === 80, "Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");

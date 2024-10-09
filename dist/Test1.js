@@ -13,29 +13,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utils_1 = __importDefault(require("./Utils"));
-const unit_test = () => __awaiter(void 0, void 0, void 0, function* () {
-    //ทดสอบฟังก์ชัน calculateDiscountPrice
+const Test1 = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // ทดสอบการคำนวณส่วนลด 20% จากราคาสินค้า 100 บาท ควรจะได้ผลลัพธ์ 80
+        const price = (0, Utils_1.default)(100, 20);
+        console.log(price); // Should print 80
+        // Test 1: Calculate 20% discount on a price of 100
         const result1 = (0, Utils_1.default)(100, 20);
-        if (result1 === 80) {
-            console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
-        }
-        else {
-            console.log("Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
-        }
-        // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
+        console.assert(result1 === 80, "Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
+        console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
+        // Test 2: No discount
         const result2 = (0, Utils_1.default)(100, 0);
-        if (result2 === 100) {
-            console.log("Discount Test2 passed: calculateDiscountPrice(100, 0) === 100");
-        }
-        else {
-            console.log("Discount Test2 failed: calculateDiscountPrice(100, 0) !== 100");
-        }
-        // ทดสอบกรณีที่ราคาสินค้าติดลบ ควรจะเกิดข้อผิดพลาด (throw error)
+        console.assert(result2 === 100, "Discount Test2 failed: calculateDiscountPrice(100, 0) !== 100");
+        console.log("Discount Test2 passed: calculateDiscountPrice(100, 0) === 100");
+        // Test 3: Negative price should throw error
         try {
             (0, Utils_1.default)(-100, 20);
-            console.log("Discount Test3 failed: calculateDiscountPrice(-100, 20) should throw error");
+            console.error("Discount Test3 failed: calculateDiscountPrice(-100, 20) should throw error");
         }
         catch (error) {
             console.log("Discount Test3 passed: Error caught correctly for negative price");
@@ -45,5 +38,5 @@ const unit_test = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error in discount calculation tests:", error);
     }
 });
-// เรียกใช้ฟังก์ชันทดสอบ
-unit_test();
+// Call the test function
+Test1();

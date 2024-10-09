@@ -1,9 +1,9 @@
 import axios from "axios";
 
 // Function to calculate discount price
-export function calculateDiscountPrice(price: number, discount: number): number {
+function calculateDiscountPrice(price: number, discount: number): number {
     if (price < 0 || discount < 0) {
-        throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ"); // Price or discount cannot be negative
+        throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
     }
     const discountAmount = (price * discount) / 100;
     return price - discountAmount;
@@ -20,3 +20,5 @@ export async function addUser(data: any) {
         throw error; // Rethrow the error for further handling
     }
 }
+
+export default calculateDiscountPrice;

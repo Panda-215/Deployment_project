@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { calculateDiscountPrice } from './Utils'; // Import your function
+import calculateDiscountPrice from './Utils'; // Import your function
 
 const app = express();
 const port = 3000;
