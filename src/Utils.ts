@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Function to calculate discount price
 function calculateDiscountPrice(price: number, discount: number): number {
     if (price < 0 || discount < 0) {
         throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
@@ -17,7 +16,7 @@ export async function addUser(data: any) {
         return response.data;
     } catch (error) {
         console.error("Error adding user:", error);
-        throw error; // Rethrow the error for further handling
+        throw error; 
     }
 }
 

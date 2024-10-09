@@ -14,7 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addUser = addUser;
 const axios_1 = __importDefault(require("axios"));
-// Function to calculate discount price
 function calculateDiscountPrice(price, discount) {
     if (price < 0 || discount < 0) {
         throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
@@ -32,7 +31,7 @@ function addUser(data) {
         }
         catch (error) {
             console.error("Error adding user:", error);
-            throw error; // Rethrow the error for further handling
+            throw error;
         }
     });
 }

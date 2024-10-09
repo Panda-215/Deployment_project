@@ -4,10 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const Utils_1 = __importDefault(require("./Utils")); // Import your function
+const Utils_1 = __importDefault(require("./Utils"));
 const app = (0, express_1.default)();
 const port = 3000;
-// Middleware to parse JSON bodies
 app.use(express_1.default.json());
 app.get('/', (req, res) => {
     res.send('Hello, World!');
@@ -20,12 +19,12 @@ app.get('/calculateDiscount', (req, res) => {
         const finalPrice = (0, Utils_1.default)(price, discount);
         res.send(`Final price after discount: ${finalPrice}`);
     }
-    catch (error) { // Use unknown type for error
-        if (error instanceof Error) { // Type guard to ensure error is an instance of Error
-            res.status(400).send(error.message); // Return error message to the client
+    catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send(error.message);
         }
         else {
-            res.status(500).send("An unknown error occurred."); // Fallback for non-Error objects
+            res.status(500).send("An unknown error occurred.");
         }
     }
 });
