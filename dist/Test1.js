@@ -16,13 +16,13 @@ const Utils_1 = __importDefault(require("./Utils"));
 const Test1 = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Test calculateDiscountPrice with 20% discount
-        const result1 = (0, Utils_1.default)(100, 20);
+        const result1 = (0, Utils_1.default)(50, 20);
         if (result1 !== 80) {
-            console.error("Assertion failed: Discount Test1 failed: calculateDiscountPrice(100, 20) should equal 80 but got", result1);
+            console.error("Assertion failed: Discount Test1 failed: calculateDiscountPrice(50, 20) should equal 80 but got", result1);
             process.exit(1); // Exit with failure code
         }
         else {
-            console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
+            console.log("Discount Test1 passed: calculateDiscountPrice(50, 20) === 80");
         }
         // Test with no discount
         const result2 = (0, Utils_1.default)(100, 0);
