@@ -14,34 +14,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utils_1 = require("./Utils");
 const Utils_2 = __importDefault(require("./Utils"));
-// ตัวอย่างฟังก์ชัน unit_test
 const unit_test = () => __awaiter(void 0, void 0, void 0, function* () {
-    // ทดสอบฟังก์ชัน add
-    // try {
-    //     // ทดสอบกรณี add(1, 2) ซึ่งควรจะได้ผลลัพธ์เท่ากับ 3
-    //     if (Utils.add(1, 2) === 3) {
-    //         console.log("Test1 passed: add(1, 2) === 3");
-    //     } else {
-    //         console.log("Test1 failed: add(1, 2) !== 3");
-    //     }
-    //     // ทดสอบกรณี add(2, 2) ซึ่งควรจะได้ผลลัพธ์เท่ากับ 4
-    //     if (Utils.add(2, 2) === 4) {
-    //         console.log("Test2 passed: add(2, 2) === 4");
-    //     } else {
-    //         console.log("Test2 failed: add(2, 2) !== 4");
-    //     }
-    // } catch (error) {
-    //     console.error("Error in add function tests:", error);
-    // }
     // ทดสอบฟังก์ชัน calculateDiscountPrice
     try {
         // ทดสอบการคำนวณส่วนลด 20% จากราคาสินค้า 100 บาท ควรจะได้ผลลัพธ์ 80
-        const result1 = (0, Utils_2.default)(100, 20);
+        const result1 = (0, Utils_2.default)(100, 30);
         if (result1 === 80) {
-            console.log("Discount Test1 passed: calculateDiscountPrice(100, 20) === 80");
+            console.log("Discount Test1 passed: calculateDiscountPrice(100, 30) === 80");
         }
         else {
-            console.log("Discount Test1 failed: calculateDiscountPrice(100, 20) !== 80");
+            console.log("Discount Test1 failed: calculateDiscountPrice(100, 30) !== 80");
         }
         // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
         const result2 = (0, Utils_2.default)(100, 0);
