@@ -1,20 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
-function add(a, b) {
-    return a + b;
+// function add(a: number, b: number) {
+//     return a + b;
+// }
+function calculateDiscountedPriceWithExtra(price, discountPercentage) {
+    if (price < 0 || discountPercentage < 0) {
+        throw new Error('Price and discount percentage must be positive numbers');
+    }
+    else if (discountPercentage > 100) {
+        throw new Error('Discount percentage cannot be more than 100');
+    }
+    else if (price > 500) {
+        discountPercentage += 5; // ถ้าราคามากกว่า 500 จะเพิ่มส่วนลดอีก 5%
+    }
+    const discount = (price * discountPercentage) / 100;
+    return price - discount;
 }
-// function calculateDiscountPrice(price: number, discount: number): number {
-//     if (price < 0 || discount < 0) {
-//         throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
-//     }
-//     const discountAmount = (price * discount) / 100;
-//     return price - discountAmount;
-// }
-// export default calculateDiscountPrice;
-// async function addUser(data:any) {
-//     const response: any = await axios.post('https://jsonplaceholder.typicode.com/users', data);
-//    console.log (response);
-//    return response.data
-// }
-exports.Utils = { add };
+exports.Utils = { calculateDiscountedPriceWithExtra };
