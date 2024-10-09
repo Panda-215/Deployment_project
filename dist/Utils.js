@@ -4,17 +4,17 @@ exports.Utils = void 0;
 // function add(a: number, b: number) {
 //     return a + b;
 // }
-function calculateDiscountedPriceWithExtra(price, discountPercentage) {
-    if (price < 0 || discountPercentage < 0) {
-        throw new Error('Price and discount percentage must be positive numbers');
+function calculateDiscountPrice(price, discount) {
+    if (price < 0 || discount < 0) {
+        throw new Error("ราคาหรือส่วนลดต้องไม่ติดลบ");
     }
-    else if (discountPercentage > 100) {
-        throw new Error('Discount percentage cannot be more than 100');
-    }
-    else if (price > 500) {
-        discountPercentage += 5; // ถ้าราคามากกว่า 500 จะเพิ่มส่วนลดอีก 5%
-    }
-    const discount = (price * discountPercentage) / 100;
-    return price - discount;
+    const discountAmount = (price * discount) / 100;
+    return price - discountAmount;
 }
-exports.Utils = { calculateDiscountedPriceWithExtra };
+exports.default = calculateDiscountPrice;
+// async function addUser(data:any) {
+//     const response: any = await axios.post('https://jsonplaceholder.typicode.com/users', data);
+//    console.log (response);
+//    return response.data
+// }
+exports.Utils = { calculateDiscountPrice };
