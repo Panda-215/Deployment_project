@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.send('Try again Hello, World!');
 });
 // app.get('/addUser', async (req: Request, res: Response) => {
 //     const data: any = {
