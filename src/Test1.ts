@@ -17,11 +17,11 @@ const unit_test = async () => {
         }
 
        // ทดสอบการคำนวณเมื่อไม่มีส่วนลด ราคาสินค้าควรจะยังคงเป็น 100 บาท
-        const result2 = calculateDiscountPrice(100, 10);
+        const result2 = calculateDiscountPrice(100, 0);
         if (result2 === 100) {
-            console.log("Discount Test2 passed: calculateDiscountPrice(100, 10) === 100");
+            console.log("Discount Test2 passed: calculateDiscountPrice(100, 0) === 100");
         } else {
-            console.log("Discount Test2 failed: calculateDiscountPrice(100, 10) !== 100");
+            console.log("Discount Test2 failed: calculateDiscountPrice(100, 0) !== 100");
         }
 
        // ทดสอบกรณีที่ราคาสินค้าติดลบ ควรจะเกิดข้อผิดพลาด (throw error)
