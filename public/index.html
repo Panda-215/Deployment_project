@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+
+</head>
+<body>
+
+    <h1>Discount Calculator</h1>
+    <input type="number" id="price" placeholder="Enter price" />
+    <input type="number" id="discount" placeholder="Enter discount (%)" />
+    <button id="calculateButton">Calculate Discount</button>
+
+    <div id="result"></div>
+
+    <script src="../dist/index.js"></script> <!-- Link to your compiled JS file -->
+    <script>
+        document.getElementById('calculateButton').addEventListener('click', () => {
+            const price = parseFloat(document.getElementById('price').value);
+            const discount = parseFloat(document.getElementById('discount').value);
+            const result = calculateDiscountPrice(price, discount);
+            document.getElementById('result').innerText = `Discounted Price: ${result}`;
+        });
+    </script>
+</body>
+</html>
